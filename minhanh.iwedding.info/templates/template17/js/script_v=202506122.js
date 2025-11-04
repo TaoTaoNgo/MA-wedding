@@ -963,14 +963,14 @@ if ($("#wish-form").length) {
         },
         //haovm
         submitHandler: function (form) {
-            $("#loader").css("display", "inline-block");
+            $("#c-loader").css("display", "block");
             $.ajax({
                 type: "POST",
                 // url: "https://script.google.com/macros/s/AKfycbzcFsbWySKxE_EPgImzFR0WR4W8c1ZC1csZ7dBT-jyw9WBKwh5u8P_5pB9X8wS44VAATg/exec",
                 url: "https://script.google.com/macros/s/AKfycbyIvLdHaGnxndGHu4zjwGRlCnhfdIrriKgAaQPKrEZch1E6M9jH4rOzEI_XwuX5qqvYug/exec",
                 data: $(form).serialize(),
                 success: function (res) {
-                    $("#loader").hide();
+                    $("#c-loader").hide();
                     if (!res.error) {
                         // $('.wish-box').scrollTop(0);
                         // $('.wish-box').prepend('<div class="wish-box-item bg"><strong>'+$(form).find("input[name='name']").val().replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;")+'</strong><p>'+$(form).find("textarea[name='content']").val().replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;")+'</p></div>');
@@ -994,7 +994,7 @@ if ($("#wish-form").length) {
                     form.reset();
                 },
                 error: function () {
-                    $("#loader").hide();
+                    $("#c-loader").hide();
                     $("#error").slideDown("slow");
                     setTimeout(function () {
                         $("#error").slideUp("slow");
